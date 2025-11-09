@@ -1,0 +1,192 @@
+/* Import Google Fonts for playful effect */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-bg: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --accent-color: #ffea70;
+  --accent-color-2: #ffd365;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --shadow-color: rgba(255, 211, 101, 0.15);
+  --card-blur: blur(8px);
+  --transition-speed: 0.3s;
+  --border-color: rgba(255, 211, 101, 0.2);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+#app {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  color: var(--accent-color);
+  animation: slideDown 0.6s ease-out;
+}
+
+/* Responsive typography */
+h1 {
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 2.7rem);
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  user-select: none;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Layout containers */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Cards to contain charts or controls */
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  backdrop-filter: var(--card-blur);
+  padding: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-speed) ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Buttons for controls */
+button {
+  background: rgba(255, 211, 101, 0.1);
+  border: 1px solid var(--border-color);
+  color: var(--accent-color-2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  font-family: inherit;
+  user-select: none;
+}
+
+button:hover {
+  background: rgba(255, 211, 101, 0.2);
+  border-color: rgba(255, 211, 101, 0.3);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Flex utilities */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 235, 112, 0.7);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  #app {
+    padding: 10px;
+  }
+  
+  main {
+    grid-template-columns: 1fr;
+  }
+  
+  .card {
+    min-height: 300px;
+  }
+}
