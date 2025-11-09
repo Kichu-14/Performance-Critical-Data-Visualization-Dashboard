@@ -28,7 +28,7 @@ This dashboard streams simulated or user-imported CSV data, visualizing multiple
 
 ## Project Demo
 
-> Deployment link :
+
 > <img width="1919" height="956" alt="Screenshot 2025-11-09 210033" src="https://github.com/user-attachments/assets/3f601405-d25b-4099-87db-caf972b4b893" />
 
 > <img width="1919" height="953" alt="Screenshot 2025-11-09 210057" src="https://github.com/user-attachments/assets/000c65eb-3f1c-4c97-87e8-fb5a334fc157" />
